@@ -13,6 +13,8 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  setTitle(to.meta.title)
+
   const currentUser = firebase.auth().currentUser
   const requireAuth = to.matched.some(record => record.meta.auth)
 
@@ -23,5 +25,9 @@ router.beforeEach((to, from, next) => {
 
   next()
 })
+
+const setTitle = (title) => {
+  document.title = title
+}
 
 export default router

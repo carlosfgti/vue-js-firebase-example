@@ -4,24 +4,34 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
+        meta: {
+            title: 'Bem vindo ao projeto!'
+        }
     },
     {
         path: '/login',
         name: 'auth.login',
-        component: () => import('@/views/Auth/Login')
+        component: () => import('@/views/Auth/Login'),
+        meta: {
+            title: 'Login'
+        }
     },
     {
-        path: '/register',
+        path: '/cadastrar',
         name: 'auth.register',
-        component: () => import('@/views/Auth/Register')
+        component: () => import('@/views/Auth/Register'),
+        meta: {
+            title: 'Cadastrar-se'
+        }
     },
     {
         path: '/chat',
         name: 'chat',
         component: () => import('@/views/Chat/Home'),
         meta: {
-            auth: true
+            auth: true,
+            title: 'Chat'
         }
     }
 ]
