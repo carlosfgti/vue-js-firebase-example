@@ -19,7 +19,10 @@ const routes = [
     {
         path: '/chat',
         name: 'chat',
-        component: () => import('@/views/Chat/Home')
+        component: () => import('@/views/Chat/Home'),
+        meta: {
+            auth: true
+        }
     }
 ]
 

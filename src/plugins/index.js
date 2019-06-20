@@ -1,1 +1,5 @@
-require('./firebase')
+import firebase from './firebase'
+
+export {
+    firebase
+}

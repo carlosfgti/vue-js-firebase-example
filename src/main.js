@@ -5,13 +5,18 @@ import 'buefy/dist/buefy.css'
 import App from './App.vue'
 import router from './routers'
 import store from './store/'
-require('./plugins')
+import { firebase } from './plugins'
 
 Vue.config.productionTip = false
 Vue.use(Buefy)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+let app = ''
+firebase.auth().onAuthStateChanged(() => {
+  if (!app) {
+    app = new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  }
+})
