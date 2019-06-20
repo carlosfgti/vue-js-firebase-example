@@ -52,13 +52,14 @@ export default {
                 .createUserWithEmailAndPassword(this.formData.email, this.formData.password)
                 .then(
                     (user) => {
-                        console.log(user)
+                        this.$toast.open({
+                            message: 'Cadastro Realizado com Sucesso!',
+                            type: 'is-success'
+                        })
 
                         this.$router.push({name: 'chat'})
                     },
-                    (err) => {
-                        console.log(`Ops... ${err.message}`)
-                    }
+                    (err) => this.$swal('Erro!', `Ops... ${err.message}`, 'error')
                 )
                 .finally(() => this.loading = false)
         }

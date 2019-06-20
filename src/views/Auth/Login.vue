@@ -45,14 +45,15 @@ export default {
                 .signInWithEmailAndPassword(this.email, this.password)
                 .then(
                     (user) => {
-                        console.log(user)
-
                         // this.$router.push({name: 'chat'})
                         this.$router.replace({name: 'chat'})
+
+                        this.$toast.open({
+                            message: 'Login Realizado com Sucesso!',
+                            type: 'is-success'
+                        })
                     },
-                    (err) => {
-                        console.log(`Ops... ${err.message}`)
-                    }
+                    (err) => this.$swal('Erro!', `Ops... ${err.message}`, 'error')
                 )
                 .finally(() => this.loading = false)
         }
