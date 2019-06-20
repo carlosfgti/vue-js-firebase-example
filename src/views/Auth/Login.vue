@@ -47,7 +47,8 @@ export default {
                     (user) => {
                         console.log(user)
 
-                        this.$router.push({name: 'chat'})
+                        // this.$router.push({name: 'chat'})
+                        this.$router.replace({name: 'chat'})
                     },
                     (err) => {
                         console.log(`Ops... ${err.message}`)
