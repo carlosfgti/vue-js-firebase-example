@@ -9,7 +9,9 @@
       </router-link>
     </div>
 
-    <router-view/>
+    <div class="container">
+      <router-view/>
+    </div>
     
   </div>
 </template>
