@@ -5,6 +5,7 @@ import 'buefy/dist/buefy.css'
 import App from './App.vue'
 import router from './routers'
 import store from './store/'
+require('./plugins')
 
 Vue.config.productionTip = false
 Vue.use(Buefy)
